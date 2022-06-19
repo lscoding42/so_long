@@ -1,0 +1,443 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sun Jun 19 19:57:38 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from 'Makefile', line 3)
+SRCS_BONUS = srcs/ft_main_bonus.c srcs/ft_sprites_bonus.c srcs/ft_screen_bonus.c srcs/ft_readmap_bonus.c srcs/ft_hooks_bonus.c srcs/ft_get_pixel_bonus.c srcs/ft_check_bonus.c srcs/ft_error_bonus.c gnl/get_next_line.c gnl/get_next_line_utils.c
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /mnt/nfs/homes/lhafsi/.Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /mnt/nfs/homes/lhafsi/Desktop/so_long
+# makefile
+SHELL = /bin/sh
+# environment
+GDM_LANG = en
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 9:2893879
+# makefile (from 'Makefile', line 36)
+CFLAGS = -Wall -Werror -Wextra -g3  -D LINUX 
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/lhafsi/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101101/bus,guid=900a36a5eaa99eada036645762af62e3
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+_ = /usr/share/code/code
+# makefile (from 'Makefile', line 14)
+OBJS = $(SRCS:.c=.o)
+# environment
+MANAGERPID = 210881
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/101101/vscode-ipc-1c613630-a5fc-4274-bba7-e6d5333a3c17.sock
+# environment
+VSCODE_CWD = /mnt/nfs/homes/lhafsi
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session5
+# environment
+KRB5CCNAME = FILE:/tmp/krb5cc_101101_7OADSV
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /mnt/nfs/homes/lhafsi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# environment
+GPG_AGENT_INFO = /run/user/101101/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/e1r4p13.42.fr:@/tmp/.ICE-unix/211341,unix/e1r4p13.42.fr:/tmp/.ICE-unix/211341
+# environment
+XDG_RUNTIME_DIR = /run/user/101101
+# makefile (from 'Makefile', line 27)
+LIBFT_FLAG = -L libft -lft
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 2aac6737380d4c87b96565d0d9903878
+# makefile (from 'Makefile', line 34)
+MLX_LIB = $(MLX_DIR)/libmlx_Linux.a
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 25)
+LIBFT_DIR = libft
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/lhafsi
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+ 
+SSH_AUTH_SOCK = /run/user/101101/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 212078
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# makefile (from 'Makefile', line 35)
+MLXFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -Imlx_linux
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /mnt/nfs/homes/lhafsi/Desktop/so_long
+# default
+.LOADED := 
+# makefile (from 'Makefile', line 15)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+# environment
+SSH_AGENT_PID = 211310
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /mnt/nfs/homes/lhafsi
+# environment
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/lhafsi/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+# environment
+LOGNAME = lhafsi
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# makefile (from 'Makefile', line 1)
+SRCS = srcs/main.c 
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 19)
+CC = gcc
+# environment
+IM_CONFIG_PHASE = 1
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = lhafsi
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LIBVIRT_DEFAULT_URI = qemu:///system
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/nfs/homes/lhafsi
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+VSCODE_IPC_HOOK = /run/user/101101/vscode-96e5464b-1.68.1-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+# 'override' directive
+.SHELLSTATUS := 0
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 33)
+MLX_DIR = mlx_linux
+# environment
+LC_ALL = C
+# environment
+DBUS_STARTER_BUS_TYPE = session
+# makefile (from 'Makefile', line 23)
+HEADER = includes/so_long.h
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile', line 17)
+NAME = so_long
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+DOCKER_HOST = unix:///run/user/101101/docker.sock
+# environment
+VSCODE_PID = 212078
+# environment
+DBUS_STARTER_ADDRESS = unix:path=/run/user/101101/bus,guid=900a36a5eaa99eada036645762af62e3
+# makefile (from 'Makefile', line 26)
+LIBFT_LIB = $(LIBFT_DIR)/libft.a
+# variable set hash-table stats:
+# Load=117/1024=11%, Rehash=0, Collisions=20/177=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 56, inode 246452764): 11 files, no impossibilities.
+# includes (device 0, inode 0): No files, 1 impossibilities.
+# srcs (device 56, inode 247533827): 3 files, no impossibilities so far.
+
+# 14 files, 1 impossibilities in 3 directories.
+
+# Implicit Rules
+
+%.o: %.c includes/so_long.h
+#  recipe to execute (from 'Makefile', line 42):
+	$(CC) $(CFLAGS) -o $@ -c $<
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+srcs/ft_check_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/ft_hooks_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: so_long
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: all clean fclean re bonus
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/ft_main_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/ft_screen_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/ft_get_pixel_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-16 11:26:10.310783612
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+gnl/get_next_line_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/ft_readmap_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+libft/libft.a:
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-19 17:16:42.276500661
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 52):
+	$(MAKE) -C $(LIBFT_DIR)
+
+bonus: srcs/ft_main_bonus.o srcs/ft_sprites_bonus.o srcs/ft_screen_bonus.o srcs/ft_readmap_bonus.o srcs/ft_hooks_bonus.o srcs/ft_get_pixel_bonus.o srcs/ft_check_bonus.o srcs/ft_error_bonus.o gnl/get_next_line.o gnl/get_next_line_utils.o libft/libft.a mlx_linux/libmlx_Linux.a
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 72):
+	$(CC)  $(CFLAGS) $(OBJS_BONUS) $(MLXFLAGS) $(LIBFT_FLAG) -o $(NAME)
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 64):
+	$(RM) $(NAME)
+	$(RM) $(LIBFT_LIB)
+	$(RM) $(MLX_LIB)
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 58):
+	$(RM) $(OBJS)
+	$(RM) $(OBJS_BONUS)
+	$(MAKE) clean -C $(LIBFT_DIR)
+	$(MAKE) clean -C $(MLX_DIR)
+
+# Not a target:
+srcs/ft_error_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+gnl/get_next_line.o:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/ft_sprites_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+so_long: srcs/main.o libft/libft.a mlx_linux/libmlx_Linux.a
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-19 17:17:11.180452185
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	$(CC)  $(CFLAGS) $(OBJS) $(MLXFLAGS) $(LIBFT_FLAG) -o $(NAME)
+
+# Not a target:
+srcs/main.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-19 17:17:11.128452271
+#  File has been updated.
+#  Successfully updated.
+
+mlx_linux/libmlx_Linux.a:
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-19 17:16:44.732496514
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 55):
+	$(MAKE) -C $(MLX_DIR)
+
+# files hash-table stats:
+# Load=23/1024=2%, Rehash=0, Collisions=0/65=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 40 / storage = 490 B / avg = 12 B
+# current buf: size = 8162 B / used = 490 B / count = 40 / avg = 12 B
+
+# strcache performance: lookups = 75 / hit rate = 46%
+# hash-table stats:
+# Load=40/8192=0%, Rehash=0, Collisions=2/75=3%
+# Finished Make data base on Sun Jun 19 19:57:38 2022
+
+ 
