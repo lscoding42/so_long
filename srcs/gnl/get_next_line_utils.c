@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Louisa <Louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 00:14:46 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/01/31 15:19:38 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/06/30 14:51:05 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-size_t	ft_strlen(char const *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "../../include/get_next_line.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {

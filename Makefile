@@ -1,77 +1,78 @@
-SRCS		=	srcs/main.c					\
+# Name ==========================================
 
-SRCS_BONUS	=	srcs/ft_main_bonus.c			\
-				srcs/ft_sprites_bonus.c			\
-				srcs/ft_screen_bonus.c			\
-				srcs/ft_readmap_bonus.c			\
-				srcs/ft_hooks_bonus.c			\
-				srcs/ft_get_pixel_bonus.c		\
-				srcs/ft_check_bonus.c			\
-				srcs/ft_error_bonus.c			\
-				gnl/get_next_line.c				\
-				gnl/get_next_line_utils.c
+NAME := so_long.a
 
-OBJS		= $(SRCS:.c=.o)
-OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
+# Dirs ==========================================
 
-NAME		=	so_long
+SRC_DIR := srcs
+INC_DIR := include
+LIB_DIR := lib
+BIN_DIR := .
 
-CC			=	gcc
-CFLAGS		= 	-Wall -Werror -Wextra -g3 #-fsanitize=address
-MLXFLAGS	= 	-framework OpenGL -framework AppKit
+# Exes ==========================================
 
-HEADER		=	includes/so_long.h
+EXE := $(BIN_DIR)/so_long
 
-LIBFT_DIR	=	libft
-LIBFT_LIB 	=	$(LIBFT_DIR)/libft.a
-LIBFT_FLAG  =   -L libft -lft
+# Compilation ====================================
 
-MLX_DIR		=	mlx
-MLX_LIB		=	$(MLX_DIR)/libmlx.a
+CC := cc
+LDFLAGS ?= -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+CFLAGS ?= -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -O3 -g -fsanitize=address
 
-ifeq ($(shell uname), Linux)
-MLX_DIR		= 	mlx_linux
-MLX_LIB		= 	$(MLX_DIR)/libmlx_Linux.a
-MLXFLAGS	=  -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -Imlx_linux
-CFLAGS 		+= 	-D LINUX 
-endif
+# Src files ======================================
 
-all: $(NAME)
+HEADERS := 	$(INC_DIR)/so_long.h\
+			$(INC_DIR)/get_next_line.h\
 
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -o $@ -c $<
-	
-$(NAME): $(OBJS) $(LIBFT_LIB) $(MLX_LIB)
-ifeq ($(shell uname), Linux)
-	$(CC)  $(CFLAGS) $(OBJS) $(MLXFLAGS) $(LIBFT_FLAG) -o $(NAME)
-else
-	$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS) $(LIBFT_LIB) $(MLX_LIB) -o $(NAME)
-endif
+SRCS	:= 	$(SRC_DIR)/main.c\
+			$(SRC_DIR)/gnl/get_next_line.c\
+			$(SRC_DIR)/gnl/get_next_line_utils.c\
+			$(SRC_DIR)/parsing/check_map_utils.c\
 
-$(LIBFT_LIB):
-	$(MAKE) -C $(LIBFT_DIR)
+BONUS_SRCS	:= 
 
-$(MLX_LIB):
-	$(MAKE) -C $(MLX_DIR)
+# Make all ========================================
+
+all : $(NAME)
+
+$(NAME): so_long
+
+%.o: %.c $(HEADERS)
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+# Objects ========================================
+
+OBJS := $(SRCS:.c=.o)
+
+BONUS_OBJS := $(BONUS_SRCS:.c=.o)
+
+# Libs ==========================================
+
+LIBFT := $(LIB_DIR)/libft/libft.a
+
+$(LIBFT) :
+	make -C lib/libft -f Makefile
+
+# Recipes ========================================
+
+so_long : $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $(EXE)
+
+bonus : $(BONUS_OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $(EXE)
+
+# Cleanup ========================================
 
 clean:
-	$(RM) $(OBJS)
-	$(RM) $(OBJS_BONUS)
-	$(MAKE) clean -C $(LIBFT_DIR)
-	$(MAKE) clean -C $(MLX_DIR)
+	make -C lib/libft -f Makefile clean
+	rm -rf $(OBJS) $(BONUS_OBJS)
 
-fclean: clean
-	$(RM) $(NAME)
-	$(RM) $(LIBFT_LIB)
-	$(RM) $(MLX_LIB)
+fclean : clean
+	make -C lib/libft -f Makefile fclean
+	rm -rf $(EXE)
 
-re: fclean all
+# Additional ========================================
 
-bonus: $(OBJS_BONUS) $(LIBFT_LIB) $(MLX_LIB)
-ifeq ($(shell uname), Linux)
-	$(CC)  $(CFLAGS) $(OBJS_BONUS) $(MLXFLAGS) $(LIBFT_FLAG) -o $(NAME)
-else
-	$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS_BONUS) $(LIBFT_LIB) $(MLX_LIB) -o $(NAME)
-endif
+re : fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY : all clean fclean re

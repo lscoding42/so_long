@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Louisa <Louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 00:15:10 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/01/31 15:19:30 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/06/30 14:57:13 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "../lib/libft/libft.h"
+# include <fcntl.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2048
 # endif
 
-size_t	ft_strlen(char const *str);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_free(char *str);
 char	*ft_strdup(char *s1);

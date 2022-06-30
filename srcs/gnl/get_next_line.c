@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Louisa <Louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 00:13:47 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/01/31 15:38:03 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/06/28 22:49:22 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../include/get_next_line.h"
 
 char	*ft_line(char *txt)
 {
@@ -93,15 +93,30 @@ char	*ft_read(int fd, char *txt)
 
 char	*get_next_line(int fd)
 {
-	static char	*txt[FD_SETSIZE];
+	static char	*txt = NULL;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FD_SETSIZE)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	txt[fd] = ft_read(fd, txt[fd]);
-	if (!txt[fd])
+	txt = ft_read(fd, txt);
+	if (!txt)
 		return (NULL);
-	line = ft_line(txt[fd]);
-	txt[fd] = ft_save(txt[fd]);
+	line = ft_line(txt);
+	txt = ft_save(txt);
 	return (line);
 }
+
+// int	main(void)
+// {
+// 	char *line;
+// 	int		fd;
+	
+// 	fd = open("test.txt", O_RDONLY);
+// 	line = get_next_line(fd);
+// 	while (line != NULL)
+// 	{
+// 		printf("%s", line);
+// 		free (line);
+// 		line = get_next_line(fd);
+// 	}
+// }
