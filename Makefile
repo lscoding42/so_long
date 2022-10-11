@@ -16,8 +16,9 @@ EXE := $(BIN_DIR)/so_long
 # Compilation ====================================
 
 CC := cc
-LDFLAGS ?= -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-CFLAGS ?= -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -O3 -g -fsanitize=address
+LDFLAGS ?= -Lmlx -lmlx -L/usr/lib -lXext -lX11 -lm -lz
+CFLAGS ?= -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -g #-fsanitize=address
+
 
 # Src files ======================================
 
@@ -26,8 +27,18 @@ HEADERS := 	$(INC_DIR)/so_long.h\
 
 SRCS	:= 	$(SRC_DIR)/main.c\
 			$(SRC_DIR)/gnl/get_next_line.c\
-			$(SRC_DIR)/gnl/get_next_line_utils.c\
-			$(SRC_DIR)/parsing/check_map_utils.c\
+			$(SRC_DIR)/parsing/check_walls.c\
+			$(SRC_DIR)/parsing/check_mid.c\
+			$(SRC_DIR)/parsing/check_file_name.c\
+			$(SRC_DIR)/parsing/map_to_array.c\
+			$(SRC_DIR)/parsing/check_path.c\
+			$(SRC_DIR)/parsing/manage_errors.c\
+			$(SRC_DIR)/mlx_work/first.c\
+			$(SRC_DIR)/mlx_work/texture.c\
+			$(SRC_DIR)/mlx_work/background.c\
+			$(SRC_DIR)/parsing/check_path.c\
+			$(SRC_DIR)/parsing/check_path_utils.c\
+
 
 BONUS_SRCS	:= 
 
