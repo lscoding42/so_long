@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_project.c                                    :+:      :+:    :+:   */
+/*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 10:26:25 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/14 12:06:54 by lhafsi           ###   ########.fr       */
+/*   Created: 2022/06/29 00:13:47 by lhafsi            #+#    #+#             */
+/*   Updated: 2022/10/14 11:24:09 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#ifndef DEFINES_H
+# define DEFINES_H
 
-void	clear_project(t_cub *cub)
-{
-	//mlx_destroy_image(cub->mlx, cub->tex.img);
-	//mlx_destroy_image(cub->mlx, cub->img.img);
-	mlx_destroy_window(cub->mlx, cub->win);
-	mlx_destroy_display(cub->mlx);
-	free(cub->mlx);
-}
+# define WIDTH 800
+# define HEIGHT 600
 
-int	destroy_event(t_data *data)
-{
-	clear_project(data);
-	exit(0);
-}
+# define SLOT_WIDTH 100
+# define SLOT_HEIGHT 100
+
+# ifndef HAUT
+#  define HAUT 119
+# endif
+
+# ifndef BAS
+#  define BAS 115
+# endif
+
+# ifndef GAUCHE
+#  define GAUCHE 97
+# endif
+
+# ifndef DROITE
+#  define DROITE 100
+# endif
+
+#endif

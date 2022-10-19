@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 18:49:14 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/19 07:53:35 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/14 11:33:44 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,3 @@ int	ft_display_errors(char **map)
 	 	return (ft_putstr_fd("Error\nMap error: No valid path", 2), 0);
 	return (1);
 }
-
-// typedef struct s_test
-// {
-// 	(int *)fct(char **map);
-// 	char *msg;
-	
-// }t_test;
-
-// t_test test[8];
-
-// test[0]= 

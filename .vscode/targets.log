@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 30 15:09:39 2022
+# Make data base, printed on Wed Oct 19 22:25:49 2022
 
 # Variables
 
@@ -22,8 +22,6 @@ DESKTOP_SESSION = ubuntu
 XDG_SESSION_CLASS = user
 # environment
 XDG_SESSION_TYPE = x11
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -35,9 +33,11 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /mnt/nfs/homes/lhafsi/Desktop/so_long
+CURDIR := /mnt/nfs/homes/lhafsi/Desktop/so_long/PERSO/V6
 # makefile
 SHELL = /bin/sh
+# environment
+GDM_LANG = en
 # environment
 VTE_VERSION = 6003
 # environment
@@ -45,9 +45,9 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/code
 # makefile (from 'Makefile', line 20)
-CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -O3 -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -g 
 # environment
-JOURNAL_STREAM = 9:58362
+JOURNAL_STREAM = 9:3111927
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -66,20 +66,16 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/lhafsi/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101101/bus
+# makefile (from 'Makefile', line 58)
+OBJS := srcs/main.o srcs/gnl/get_next_line.o srcs/parsing/check_walls.o srcs/parsing/check_mid.o srcs/parsing/check_file_name.o srcs/parsing/map_to_array.o srcs/parsing/check_path.o srcs/parsing/manage_errors.o srcs/mlx_work/init_project.o srcs/mlx_work/manage_keys.o srcs/mlx_work/texture.o srcs/mlx_work/clear_project.o srcs/mlx_work/background.o srcs/parsing/check_path.o srcs/parsing/check_path_utils.o
 # environment
-VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 45)
-OBJS := srcs/main.o srcs/gnl/get_next_line.o srcs/gnl/get_next_line_utils.o srcs/parsing/check_map_utils.o
+MANAGERPID = 550335
 # environment
-MANAGERPID = 5317
+VSCODE_CWD = /mnt/nfs/homes/lhafsi/Desktop/so_long/PERSO/V6
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/101101/vscode-ipc-6d7faf03-61ee-454f-bbdd-6b274f5ece97.sock
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session7
 # environment
-VSCODE_CWD = /mnt/nfs/homes/lhafsi/Desktop/so_long
-# environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
-# environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101101_vP5HbS
+KRB5CCNAME = FILE:/tmp/krb5cc_101101_GvZOru
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -87,45 +83,50 @@ PATH = /mnt/nfs/homes/lhafsi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/b
 # environment
 GPG_AGENT_INFO = /run/user/101101/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e1r3p4.42.fr:@/tmp/.ICE-unix/5784,unix/e1r3p4.42.fr:/tmp/.ICE-unix/5784
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from 'Makefile', line 10)
+BIN_DIR := .
+# environment
+SESSION_MANAGER = local/e1r2p11.clusters.42paris.fr:@/tmp/.ICE-unix/550817,unix/e1r2p11.clusters.42paris.fr:/tmp/.ICE-unix/550817
 # environment
 XDG_RUNTIME_DIR = /run/user/101101
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
-VSCODE_LOG_STACK = false
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = bbcbab5fa1bb4ae6932516d66a12a9be
+INVOCATION_ID = 4bd3747eac3c4cf8a84ae01c66575989
 # makefile (from 'Makefile', line 19)
-LDFLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+LDFLAGS = -Lmlx -lmlx -L/usr/lib -lXext -lX11 -lm -lz
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/lhafsi
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101101/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 6968
+GIO_LAUNCHED_DESKTOP_FILE_PID = 552152
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
-# makefile (from 'Makefile', line 32)
+# makefile (from 'Makefile', line 45)
 BONUS_SRCS := 
 # environment
-VSCODE_PIPE_LOGGING = true
-# environment
-PWD = /mnt/nfs/homes/lhafsi/Desktop/so_long
+PWD = /mnt/nfs/homes/lhafsi/Desktop/so_long/PERSO/V6
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 5748
+SSH_AGENT_PID = 550781
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+ 
 # makefile (from 'Makefile', line 8)
 INC_DIR := include
 # environment
@@ -137,15 +138,15 @@ HOME = /mnt/nfs/homes/lhafsi
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/lhafsi/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/lhafsi/.config/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
 # environment
 LOGNAME = lhafsi
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# makefile (from 'Makefile', line 24)
+# makefile (from 'Makefile', line 25)
 HEADERS := include/so_long.h include/get_next_line.h 
 # environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
+ZSH = /mnt/nfs/homes/lhafsi/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -162,11 +163,11 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
-# makefile (from 'Makefile', line 27)
-SRCS := srcs/main.c srcs/gnl/get_next_line.c srcs/gnl/get_next_line_utils.c srcs/parsing/check_map_utils.c 
+# makefile (from 'Makefile', line 28)
+SRCS := srcs/main.c srcs/gnl/get_next_line.c srcs/parsing/check_walls.c srcs/parsing/check_mid.c srcs/parsing/check_file_name.c srcs/parsing/map_to_array.c srcs/parsing/check_path.c srcs/parsing/manage_errors.c srcs/mlx_work/init_project.c srcs/mlx_work/manage_keys.c srcs/mlx_work/texture.c srcs/mlx_work/clear_project.c srcs/mlx_work/background.c srcs/parsing/check_path.c srcs/parsing/check_path_utils.c 
 # environment
-SHLVL = 1
-# makefile (from 'Makefile', line 51)
+SHLVL = 2
+# makefile (from 'Makefile', line 64)
 LIBFT := lib/libft/libft.a
 # makefile (from 'Makefile', line 18)
 CC := cc
@@ -182,23 +183,26 @@ USER = lhafsi
 XDG_CURRENT_DESKTOP = Unity
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
+# environment
+LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/lhafsi
+OLDPWD = /mnt/nfs/homes/lhafsi/Desktop/so_long/PERSO
 # environment
 TERMINATOR_DBUS_PATH = /net/tenshu/Terminator2
 # default
 .VARIABLES := 
 # automatic
- 
 *F = $(notdir $*)
+# environment
+LANGUAGE = en
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/101101/vscode-96e5464b-1.68.1-main.sock
+VSCODE_IPC_HOOK = /run/user/101101/vscode-96e5464b-1.71.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -221,10 +225,10 @@ MAKEFILES :=
 SRC_DIR := srcs
 # automatic
 <F = $(notdir $<)
-# makefile (from 'Makefile', line 47)
+# makefile (from 'Makefile', line 60)
 BONUS_OBJS := 
-# makefile (from 'Makefile', line 10)
-BIN_DIR := .
+# environment
+PAGER = less
 # environment
 LC_ALL = C
 # environment
@@ -254,11 +258,11 @@ TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
 # environment
 DOCKER_HOST = unix:///run/user/101101/docker.sock
 # environment
-VSCODE_PID = 7004
+VSCODE_PID = 552282
 # environment
-TERMINATOR_UUID = urn:uuid:e740ebef-17a1-45aa-9581-4fec3735c550
+TERMINATOR_UUID = urn:uuid:16783d0a-bdce-4bff-a8a9-2de598446bc7
 # variable set hash-table stats:
-# Load=123/1024=12%, Rehash=0, Collisions=25/168=15%
+# Load=125/1024=12%, Rehash=0, Collisions=26/181=14%
 
 # Pattern-specific Variable Values
 
@@ -266,23 +270,58 @@ TERMINATOR_UUID = urn:uuid:e740ebef-17a1-45aa-9581-4fec3735c550
 
 # Directories
 
-# include (device 58, inode 87177307): 4 files, no impossibilities so far.
-# . (device 58, inode 86750095): 12 files, no impossibilities.
-# srcs/gnl (device 58, inode 95332165): 6 files, no impossibilities so far.
-# srcs (device 58, inode 87301171): 5 files, no impossibilities so far.
-# srcs/parsing (device 58, inode 95332167): 4 files, no impossibilities so far.
+# srcs/mlx_work (device 56, inode 329912317): 11 files, no impossibilities so far.
+# include (device 56, inode 329909875): 5 files, no impossibilities so far.
+# . (device 56, inode 308714690): 15 files, no impossibilities.
+# srcs/gnl (device 56, inode 329912307): 3 files, no impossibilities so far.
+# srcs (device 56, inode 329912305): 3 files, no impossibilities so far.
+# srcs/parsing (device 56, inode 329912309): 15 files, no impossibilities so far.
 
-# 31 files, no impossibilities in 5 directories.
+# 52 files, no impossibilities in 6 directories.
 
 # Implicit Rules
 
 %.o: %.c include/so_long.h include/get_next_line.h
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 54):
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
+
+# Not a target:
+srcs/mlx_work/texture.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 02:39:04.768603
+#  File has been updated.
+#  Successfully updated.
+
+srcs/mlx_work/clear_project.o: srcs/mlx_work/clear_project.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/mlx_work/clear_project'
+#  Last modified 2022-10-19 19:28:20.716697925
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+srcs/mlx_work/manage_keys.o: srcs/mlx_work/manage_keys.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/mlx_work/manage_keys'
+#  Last modified 2022-10-19 19:28:20.615697255
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+srcs/parsing/check_file_name.o: srcs/parsing/check_file_name.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/parsing/check_file_name'
+#  Last modified 2022-10-19 19:28:20.362695577
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 all: so_long.a
 #  Phony target (prerequisite of .PHONY).
@@ -292,19 +331,19 @@ all: so_long.a
 #  File has been updated.
 #  Successfully updated.
 
-srcs/parsing/check_map_utils.o: srcs/parsing/check_map_utils.c include/so_long.h include/get_next_line.h
+srcs/parsing/check_walls.o: srcs/parsing/check_walls.c include/so_long.h include/get_next_line.h
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'srcs/parsing/check_map_utils'
-#  Last modified 2022-06-30 15:09:30.771451294
+#  Implicit/static pattern stem: 'srcs/parsing/check_walls'
+#  Last modified 2022-10-19 19:28:20.265694934
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 54):
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 # Not a target:
 srcs/gnl/get_next_line.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 22:49:22.914018613
+#  Last modified 2022-10-19 02:39:04.751603
 #  File has been updated.
 #  Successfully updated.
 
@@ -314,39 +353,82 @@ srcs/gnl/get_next_line.c:
 #  File has not been updated.
 
 # Not a target:
+srcs/mlx_work/init_project.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 02:39:04.766603
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/parsing/manage_errors.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 07:53:35.451891
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 15:09:23.947395599
+#  Last modified 2022-10-19 02:39:04.720603
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 15:08:43.415064817
+#  Last modified 2022-10-19 07:37:57.109163
 #  File has been updated.
 #  Successfully updated.
 
-srcs/gnl/get_next_line_utils.o: srcs/gnl/get_next_line_utils.c include/so_long.h include/get_next_line.h
+srcs/parsing/check_mid.o: srcs/parsing/check_mid.c include/so_long.h include/get_next_line.h
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'srcs/gnl/get_next_line_utils'
-#  Last modified 2022-06-30 15:09:30.711450804
+#  Implicit/static pattern stem: 'srcs/parsing/check_mid'
+#  Last modified 2022-10-19 19:28:20.314695259
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 54):
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 # Not a target:
-srcs/parsing/check_map_utils.c:
+srcs/parsing/check_path.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 15:08:06.046759885
+#  Last modified 2022-10-19 02:39:04.752603
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/parsing/check_walls.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 02:39:04.759603
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/mlx_work/clear_project.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 02:39:04.765603
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+ 
+srcs/mlx_work/manage_keys.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 07:37:46.477098
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/parsing/check_file_name.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 02:39:04.764603
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 include/get_next_line.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 14:57:13.065356469
+#  Last modified 2022-10-19 02:39:04.824603
 #  File has been updated.
 #  Successfully updated.
 
@@ -354,7 +436,7 @@ bonus: lib/libft/libft.a
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 62):
+#  recipe to execute (from 'Makefile', line 75):
 	$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $(EXE)
 
 fclean: clean
@@ -362,17 +444,26 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 71):
+#  recipe to execute (from 'Makefile', line 84):
 	make -C lib/libft -f Makefile fclean
 	rm -rf $(EXE)
+
+srcs/parsing/map_to_array.o: srcs/parsing/map_to_array.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/parsing/map_to_array'
+#  Last modified 2022-10-19 19:28:20.410695896
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 srcs/main.o: srcs/main.c include/so_long.h include/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'srcs/main'
-#  Last modified 2022-06-30 15:09:30.555449531
+#  Last modified 2022-10-19 19:28:20.151694178
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 54):
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 # Not a target:
@@ -380,6 +471,40 @@ srcs/main.o: srcs/main.c include/so_long.h include/get_next_line.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+srcs/mlx_work/background.o: srcs/mlx_work/background.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/mlx_work/background'
+#  Last modified 2022-10-19 19:28:20.763698236
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+srcs/parsing/check_path_utils.o: srcs/parsing/check_path_utils.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/parsing/check_path_utils'
+#  Last modified 2022-10-19 19:28:20.817698594
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+# Not a target:
+srcs/parsing/check_mid.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 02:39:04.757603
+#  File has been updated.
+#  Successfully updated.
+
+srcs/mlx_work/texture.o: srcs/mlx_work/texture.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/mlx_work/texture'
+#  Last modified 2022-10-19 19:28:20.665697587
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -392,48 +517,66 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 67):
+#  recipe to execute (from 'Makefile', line 80):
 	make -C lib/libft -f Makefile clean
 	rm -rf $(OBJS) $(BONUS_OBJS)
-
-# Not a target:
-srcs/gnl/get_next_line_utils.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-30 14:51:05.882305716
-#  File has been updated.
-#  Successfully updated.
 
 srcs/gnl/get_next_line.o: srcs/gnl/get_next_line.c include/so_long.h include/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'srcs/gnl/get_next_line'
-#  Last modified 2022-06-30 15:09:30.643450249
+#  Last modified 2022-10-19 19:28:20.215694603
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 54):
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-so_long: srcs/main.o srcs/gnl/get_next_line.o srcs/gnl/get_next_line_utils.o srcs/parsing/check_map_utils.o lib/libft/libft.a
-#  Implicit rule search has not been done.
-#  Last modified 2022-06-30 15:09:31.00745322
+srcs/mlx_work/init_project.o: srcs/mlx_work/init_project.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/mlx_work/init_project'
+#  Last modified 2022-10-19 19:28:20.568696943
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 59):
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+so_long: srcs/main.o srcs/gnl/get_next_line.o srcs/parsing/check_walls.o srcs/parsing/check_mid.o srcs/parsing/check_file_name.o srcs/parsing/map_to_array.o srcs/parsing/check_path.o srcs/parsing/manage_errors.o srcs/mlx_work/init_project.o srcs/mlx_work/manage_keys.o srcs/mlx_work/texture.o srcs/mlx_work/clear_project.o srcs/mlx_work/background.o srcs/parsing/check_path.o srcs/parsing/check_path_utils.o lib/libft/libft.a
+#  Implicit rule search has not been done.
+#  Last modified 2022-10-19 19:28:21.019699934
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 72):
 	$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $(EXE)
 
 lib/libft/libft.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-28 22:49:54.086038614
+#  Last modified 2022-10-19 07:37:49.122114
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 54):
+#  recipe to execute (from 'Makefile', line 67):
 	make -C lib/libft -f Makefile
+
+# Not a target:
+srcs/parsing/map_to_array.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 08:02:42.630238
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 include/so_long.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-30 15:07:13.250329109
+#  Last modified 2022-10-19 08:03:29.716526
 #  File has been updated.
 #  Successfully updated.
+
+srcs/parsing/manage_errors.o: srcs/parsing/manage_errors.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/parsing/manage_errors'
+#  Last modified 2022-10-19 19:28:20.521696632
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 so_long.a: so_long
 #  Implicit rule search has been done.
@@ -441,20 +584,43 @@ so_long.a: so_long
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+srcs/mlx_work/background.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 02:39:04.769603
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/parsing/check_path_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-19 02:39:04.753603
+#  File has been updated.
+#  Successfully updated.
+
+srcs/parsing/check_path.o: srcs/parsing/check_path.c include/so_long.h include/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/parsing/check_path'
+#  Last modified 2022-10-19 19:28:20.4716963
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(CC) -c $(CFLAGS) -o $@ $<
+
 # files hash-table stats:
-# Load=22/1024=2%, Rehash=0, Collisions=2/78=3%
+# Load=42/1024=4%, Rehash=0, Collisions=5/179=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 53 / storage = 701 B / avg = 13 B
-# current buf: size = 8162 B / used = 701 B / count = 53 / avg = 13 B
+# strcache buffers: 1 (0) / strings = 103 / storage = 1771 B / avg = 17 B
+# current buf: size = 8162 B / used = 1771 B / count = 103 / avg = 17 B
 
-# strcache performance: lookups = 109 / hit rate = 51%
+# strcache performance: lookups = 212 / hit rate = 51%
 # hash-table stats:
-# Load=53/8192=1%, Rehash=0, Collisions=5/109=5%
-# Finished Make data base on Thu Jun 30 15:09:39 2022
+# Load=103/8192=1%, Rehash=0, Collisions=9/212=4%
+# Finished Make data base on Wed Oct 19 22:25:49 2022
 
  

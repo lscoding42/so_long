@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 23:10:15 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/14 04:23:51 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/14 11:41:16 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	pos_player(t_data *data, char **map)
 		{
 			if (map[x][y] == 'P')
 			{
-				data->pos[0] = x;
-				data->pos[1] = y;
+				data->player.x = x;
+				data->player.y = y;
 			}
 			y++;
 		}
@@ -44,9 +44,9 @@ void	pos_player(t_data *data, char **map)
 int	put_star(t_data *data, char **map, int x, int y)
 {
 	if (map[x][y] && map[x][y] == 'C')
-		data->cpt_c++;
+		data->map.cpt_c++;
 	if (map[x][y] && map[x][y] == 'E')
-		data->cpt_e++;
+		data->map.cpt_e++;
 	map[x][y] = '*';
 	return (1);
 }

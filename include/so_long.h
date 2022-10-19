@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 00:13:47 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/19 08:03:29 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/14 12:07:32 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,57 @@
 # include "get_next_line.h"
 # include "../mlx/mlx.h"
 # include "../lib/libft/libft.h"
+# include "defines.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
 # include <stdio.h>
 
-#define WIDTH 800
-#define HEIGHT 600
+/****************************************************************************/
+/******************              STRUCTS               **********************/
+/****************************************************************************/
 
-#define SLOT_WIDTH 100
-#define SLOT_HEIGHT 100
-
-typedef struct	s_data {
-	void	*img;
+typedef struct	s_img {
+	void	*pic;
 	char	*addr;
 	int		bpp;
 	int		line_length;
 	int		endian;
-	int		pos[2];
-	char	**map;
+}				t_img;
+
+typedef struct	s_player {
+	int		x;
+	int		y;
+}				t_player;
+
+typedef struct	s_map {
+	char	**tab;
+	int		width;
+	int		height;
 	int		nb_c;
 	int		cpt_c;
 	int		cpt_e;
+}				t_map;
+
+typedef struct s_data
+{
+	void		*mlx;
+	void		*win;
+	
+	t_img		live;
+	t_img		back;
+	t_img		img;
+	t_img		tex;
+	
+	t_player	player;
+	
+	t_map		map;
 }				t_data;
 
-typedef struct s_cub
-{
-	void *mlx;
-	void *win;
-	t_data live;
-	t_data back;
-
-	t_data tex;
-	int	width;
-	int	height;
-}	t_cub;
-
-// ****************  SRCS > PARSING ****************  //
+/****************************************************************************/
+/******************           SRCS > PARSING           **********************/
+/****************************************************************************/
 
 // SRCS > PARSING > FILE_NAME.C
 int		ft_find_dot(char *av);
@@ -93,26 +106,28 @@ int		check_path(char **map);
 int		ft_display_errors(char **map);
 
 
-// ****************  SRCS > MLX_WORK ****************  // 
+/****************************************************************************/
+/******************          SRCS > MLX_WORK           **********************/
+/****************************************************************************/
 
 // SRCS > MLX_WORK > INIT_PROJECT.C
-void	init_project(t_cub *cub);
-int		img_init(t_cub *cub);
-int		keypress_event(int key, t_cub *cub);
+void	init_project(t_data *data);
+int		img_init(t_data *data);
+int		keypress_event(int key, t_data *data);
 
 // SRCS > MLX_WORK > OTHER.C
-int		render(t_cub *cub);
+int		render(t_data *data);
 
 // SRCS > MLX_WORK > MANAGE_KEYS.C
-int	is_wall(t_cub *cub);
+int	is_wall(t_data *data);
 
 // SRCS > MLX_WORK > TEXTURE.C
 unsigned int	get_color(t_data *data, int x, int y);
 void	put_color(t_data *data, int x, int y, int color);
-void	draw_background(t_cub *cub);
-void	draw_tex(t_cub *cub, int x_offset, int y_offset);
+void	draw_background(t_data *data);
+void	draw_tex(t_data *data, int x_offset, int y_offset);
 
 // SRCS > MLX_WORK > CLEAR_PROJECT.C
-void	clear_project(t_cub *cub);
-int		destroy_event(t_cub *cub);
+void	clear_project(t_data *data);
+int		destroy_event(t_data *data);
 #endif

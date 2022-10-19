@@ -17,7 +17,7 @@ EXE := $(BIN_DIR)/so_long
 
 CC := cc
 LDFLAGS ?= -Lmlx -lmlx -L/usr/lib -lXext -lX11 -lm -lz
-CFLAGS ?= -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -g #-fsanitize=address
+CFLAGS ?= -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -g -fsanitize=address
 
 
 # Src files ======================================
@@ -33,13 +33,13 @@ SRCS	:= 	$(SRC_DIR)/main.c\
 			$(SRC_DIR)/parsing/map_to_array.c\
 			$(SRC_DIR)/parsing/check_path.c\
 			$(SRC_DIR)/parsing/manage_errors.c\
+			$(SRC_DIR)/parsing/check_path.c\
+			$(SRC_DIR)/parsing/check_path_utils.c\
 			$(SRC_DIR)/mlx_work/init_project.c\
 			$(SRC_DIR)/mlx_work/manage_keys.c\
 			$(SRC_DIR)/mlx_work/texture.c\
 			$(SRC_DIR)/mlx_work/clear_project.c\
 			$(SRC_DIR)/mlx_work/background.c\
-			$(SRC_DIR)/parsing/check_path.c\
-			$(SRC_DIR)/parsing/check_path_utils.c\
 
 
 BONUS_SRCS	:= 

@@ -1,5 +1,20 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/mnt/nfs/homes/lhafsi/Desktop/so_long'
-make: Nothing to be done for 'all'.
-make: Leaving directory '/mnt/nfs/homes/lhafsi/Desktop/so_long'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/lhafsi/Desktop/so_long/PERSO/V6'
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/main.o srcs/main.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/gnl/get_next_line.o srcs/gnl/get_next_line.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/parsing/check_walls.o srcs/parsing/check_walls.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/parsing/check_mid.o srcs/parsing/check_mid.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/parsing/check_file_name.o srcs/parsing/check_file_name.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/parsing/map_to_array.o srcs/parsing/map_to_array.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/parsing/check_path.o srcs/parsing/check_path.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/parsing/manage_errors.o srcs/parsing/manage_errors.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/mlx_work/init_project.o srcs/mlx_work/init_project.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/mlx_work/manage_keys.o srcs/mlx_work/manage_keys.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/mlx_work/texture.o srcs/mlx_work/texture.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/mlx_work/clear_project.o srcs/mlx_work/clear_project.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/mlx_work/background.o srcs/mlx_work/background.c
+cc -c -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  -o srcs/parsing/check_path_utils.o srcs/parsing/check_path_utils.c
+make -C lib/libft -f Makefile
+cc -Wall -Wextra -Werror -Iinclude -I/usr/include -Imlx_linux -g  srcs/main.o srcs/gnl/get_next_line.o srcs/parsing/check_walls.o srcs/parsing/check_mid.o srcs/parsing/check_file_name.o srcs/parsing/map_to_array.o srcs/parsing/check_path.o srcs/parsing/manage_errors.o srcs/mlx_work/init_project.o srcs/mlx_work/manage_keys.o srcs/mlx_work/texture.o srcs/mlx_work/clear_project.o srcs/mlx_work/background.o srcs/parsing/check_path_utils.o lib/libft/libft.a -Lmlx -lmlx -L/usr/lib -lXext -lX11 -lm -lz -o ./so_long
+make: Leaving directory '/mnt/nfs/homes/lhafsi/Desktop/so_long/PERSO/V6'
  

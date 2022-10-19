@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 17:00:20 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/19 08:02:42 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/14 04:19:33 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ char	**ft_create_map(char *str)
 	int		i;
 
 	i = 0;
-	if (!str || !str[0])
-		return (0);
 	map = ft_split(str, '\n');
-	if (!map || !map[0] || map == NULL)
+	if (!map || !map[0])
+		return (0);
+	if (map == NULL)
 		return (0);
 	return (map);
 }
-#include <stdio.h>
+
 int	ft_is_map_valid(char **map)
 {
 	int		i;
@@ -100,8 +100,6 @@ int	ft_manage_gnl(char *av1)
 		return (-1);
 	str = ft_map_to_str(fd);
 	map = ft_create_map(str);
-	if (map == 0)
-		return (ft_putstr_fd("Error\nMap empty", 2), -1);
 	if (fd > 0)
 	{
 		if (ft_is_map_valid(map))
