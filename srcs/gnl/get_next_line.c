@@ -6,117 +6,110 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 00:13:47 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/06/28 22:49:22 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/08/19 00:15:26 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/get_next_line.h"
+#include "../../lib/libft/libft.h"
 
-char	*ft_line(char *txt)
+size_t	bufflen_eol(char buff[])
 {
-	char	*line;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	if (txt[i] == 0)
-		return (NULL);
-	while (txt[i] && txt[i] != '\n')
-		i++;
-	line = malloc(sizeof(char) * (i + 2));
-	if (!line)
-		return (NULL);
-	i = 0;
-	while (txt[i] && txt[i] != '\n')
+	while (i < BUFFER_SIZE && buff[i])
 	{
-		line[i] = txt[i];
+		if (buff[i] == '\n')
+			return (i + 1);
 		i++;
 	}
-	if (txt[i] == '\n')
-	{
-		line[i] = txt[i];
-		i++;
-	}
-	line[i] = '\0';
-	return (line);
+	return (i);
 }
 
-char	*ft_save(char *txt)
+size_t	check_eol(char *str)
 {
-	char	*str;
-	int		i;
-	int		j;
+	size_t	i;
 
-	i = ft_endofline(txt) + 1;
-	if (txt[i - 1] == '\0')
+	i = 0;
+	while (str && str[i])
 	{
-		free(txt);
+		if (str[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	*ft_concat(char *str, char buff[])
+{
+	char	*cat;
+	size_t	slen;
+	size_t	blen;
+	size_t	i;
+	size_t	j;
+
+	slen = ft_strlen(str);
+	blen = bufflen_eol(buff);
+	cat = malloc(sizeof(cat) * (slen + blen + 1));
+	if (!cat)
 		return (NULL);
+	i = 0;
+	while (i < slen)
+	{
+		cat[i] = str[i];
+		i++;
 	}
 	j = 0;
-	str = malloc(sizeof(char) * (ft_strlen(txt) - i + 2));
-	if (!str)
-		return (NULL);
-	while (txt[i])
-	{
-		str[j] = txt[i];
-		i++;
-		j++;
-	}
-	str[j] = '\0';
-	free(txt);
-	return (str);
+	while (j < blen)
+		cat[i++] = buff[j++];
+	cat[i] = '\0';
+	free(str);
+	return (cat);
 }
 
-char	*ft_read(int fd, char *txt)
+char	*ft_realign_buff(char *s, size_t i, char buff[])
 {
-	char	*buffer;
-	int		ret;
+	char	*tmp;
+	size_t	len;
 
-	buffer = malloc (sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	ret = 1;
-	while (ret != 0 && !ft_strchr(txt, '\n'))
+	len = BUFFER_SIZE - i;
+	tmp = ft_strndup(&buff[i], len);
+	ft_bzero(buff, BUFFER_SIZE);
+	i = 0;
+	while (tmp && i < len)
 	{
-		ret = read(fd, buffer, BUFFER_SIZE);
-		if (ret == -1)
-		{
-			free (buffer);
-			return (NULL);
-		}
-		buffer[ret] = '\0';
-		txt = ft_strjoin(txt, buffer);
+		buff[i] = tmp[i];
+		i++;
 	}
-	free(buffer);
-	return (txt);
+	free(tmp);
+	return (s);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*txt = NULL;
-	char		*line;
+	static char	buffer[BUFFER_SIZE];
+	char		*str;
+	int			rd;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if ((fd < 0) || (fd > 1024))
 		return (NULL);
-	txt = ft_read(fd, txt);
-	if (!txt)
-		return (NULL);
-	line = ft_line(txt);
-	txt = ft_save(txt);
-	return (line);
+	rd = -1;
+	if (bufflen_eol(buffer) == 0)
+	{
+		ft_bzero(buffer, BUFFER_SIZE);
+		rd = read(fd, buffer, BUFFER_SIZE);
+		if (rd <= 0)
+			return (NULL);
+	}
+	str = ft_strndup(buffer, bufflen_eol(buffer));
+	while (!check_eol(str))
+	{
+		ft_bzero(buffer, BUFFER_SIZE);
+		rd = read(fd, buffer, BUFFER_SIZE);
+		if (rd <= 0)
+			break ;
+		str = ft_concat(str, buffer);
+	}
+	return (ft_realign_buff(str, bufflen_eol(buffer), buffer));
 }
-
-// int	main(void)
-// {
-// 	char *line;
-// 	int		fd;
-	
-// 	fd = open("test.txt", O_RDONLY);
-// 	line = get_next_line(fd);
-// 	while (line != NULL)
-// 	{
-// 		printf("%s", line);
-// 		free (line);
-// 		line = get_next_line(fd);
-// 	}
-// }
