@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 23:10:15 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/20 00:19:18 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/20 00:31:14 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,14 @@ int	algo_path_finding(t_data *data, char **map, int mod)
 		}
 		i++;
 	}
-	if (mod != cp_mod && data->map.cpt_c != data->map.nb_c)
+	// i = 0;
+	// while (map[i])
+	// {
+	// 	printf("%s\n", map[i]);
+	// 	i++;
+	// }
+	printf("\n");
+	if (mod != cp_mod && data->map.cpt_c <= data->map.nb_c)
 			algo_path_finding(data, map, cp_mod);
 	// printf("coooooooooooooooooooooogitooooooooooooooooooooooo\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\nqweqweqweqwe");
 	if (data->map.cpt_c == data->map.nb_c && data->map.cpt_e > 0)
