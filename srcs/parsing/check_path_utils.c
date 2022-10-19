@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 23:10:15 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/14 11:41:16 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/19 23:44:35 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,30 @@ void	pos_player(t_data *data, char **map)
 	int	x;
 	int	y;
 
-	x = 0;
-	while (map[x])
+	y = 0;
+	while (map[y])
 	{
-		y = 0;
-		while (map[x][y])
+		x = 0;
+		while (map[y][x])
 		{
-			if (map[x][y] == 'P')
+			if (map[y][x] == 'P')
 			{
 				data->player.x = x;
 				data->player.y = y;
 			}
-			y++;
+			x++;
 		}
-		x++;
+		y++;
 	}
 }
 
 int	put_star(t_data *data, char **map, int x, int y)
 {
-	if (map[x][y] && map[x][y] == 'C')
+	if (map[y][x] && map[y][x] == 'C')
 		data->map.cpt_c++;
-	if (map[x][y] && map[x][y] == 'E')
+	if (map[y][x] && map[y][x] == 'E')
 		data->map.cpt_e++;
-	map[x][y] = '*';
+	map[y][x] = '*';
 	return (1);
 }
 
@@ -56,13 +56,13 @@ int	transform(t_data *data, char **map, int x, int y)
 	int	i;
 
 	i = 0;
-	if (can_transform(map[x][y + 1]))
-		i += put_star(data, map, x, y + 1);
-	if (can_transform(map[x + 1][y]))
+	if (can_transform(map[y][x + 1]))
 		i += put_star(data, map, x + 1, y);
-	if (can_transform(map[x - 1][y]))
-		i += put_star(data, map, x - 1, y);
-	if (can_transform(map[x][y - 1]))
+	if (can_transform(map[y + 1][x]))
+		i += put_star(data, map, x, y + 1);
+	if (can_transform(map[y - 1][x]))
 		i += put_star(data, map, x, y - 1);
+	if (can_transform(map[y][x - 1]))
+		i += put_star(data, map, x - 1, y);
 	return (i);
 }

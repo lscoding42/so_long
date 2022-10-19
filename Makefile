@@ -17,7 +17,7 @@ EXE := $(BIN_DIR)/so_long
 
 CC := cc
 LDFLAGS ?= -Lmlx -lmlx -L/usr/lib -lXext -lX11 -lm -lz
-CFLAGS ?= -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -g -fsanitize=address
+CFLAGS ?= -Wall -Wextra -Werror -I$(INC_DIR) -I/usr/include -Imlx_linux -g# -fsanitize=address
 
 
 # Src files ======================================

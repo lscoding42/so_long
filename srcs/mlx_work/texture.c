@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 10:26:18 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/14 12:12:22 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/19 22:55:54 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,10 @@ void	draw_tex(t_data *data, int x_offset, int y_offset)
 		j = 0;
 		while (j < (size_t)data->map.width)
 		{
-			color = get_color(&data->tex, j, i);
+			// color = get_color(&data->tex, j, i);
+			color = get_color(data, j, i);
 			if (color != 0x0)
-				put_color(&data->back, j + x_offset, i + y_offset, color);
+				put_color(data, j + x_offset, i + y_offset, color);
 			j++;
 		}
 		i++;

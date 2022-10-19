@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 23:10:15 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/14 11:58:46 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/20 00:19:18 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,24 @@ int	algo_path_finding(t_data *data, char **map, int mod)
 
 	i = 0;
 	cp_mod = mod;
-	map[data->player.x][data->player.y] = '*';
+	map[data->player.y][data->player.x] = '*';
 	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
 		{
 			if (map[i][j] == '*')
-				cp_mod += transform(data, map, i, j);			
+				cp_mod += transform(data, map, j, i);			
 			j++;
 		}
 		i++;
 	}
 	if (mod != cp_mod && data->map.cpt_c != data->map.nb_c)
 			algo_path_finding(data, map, cp_mod);
+	// printf("coooooooooooooooooooooogitooooooooooooooooooooooo\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\nqweqweqweqwe");
 	if (data->map.cpt_c == data->map.nb_c && data->map.cpt_e > 0)
 		return (1);
-	return (free_tab(map),0);
+	return (0);
 }
 
 int	check_path(char **map)
@@ -52,5 +53,7 @@ int	check_path(char **map)
 	data.map.cpt_c = 0;
 	pos_player(&data, map);
 	cpy = ft_strddup((const char **)map);
-	return (algo_path_finding(&data, cpy, 0));
+	if (algo_path_finding(&data, cpy, 0))
+		return (free_tab(cpy), 1);
+	return (free_tab(cpy), 0);
 }

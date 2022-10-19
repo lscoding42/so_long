@@ -6,7 +6,7 @@
 /*   By: lhafsi <lhafsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 17:00:20 by lhafsi            #+#    #+#             */
-/*   Updated: 2022/10/14 04:19:33 by lhafsi           ###   ########.fr       */
+/*   Updated: 2022/10/19 23:19:45 by lhafsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int	ft_manage_gnl(char *av1)
 	if (fd < 0)
 		return (-1);
 	str = ft_map_to_str(fd);
+	if (!str)
+		return (-1);
 	map = ft_create_map(str);
 	if (fd > 0)
 	{
